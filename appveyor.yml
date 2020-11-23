@@ -43,6 +43,7 @@ install:
   - git checkout -b version 4.5.0
   - cd ..
   - cmd: Build.OpenCV.bat
+  - sh: ./Build.OpenCV.sh
 
   - sh: sudo dpkg --add-architecture i386
   - sh: sudo apt -qq update

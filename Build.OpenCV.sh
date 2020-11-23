@@ -124,10 +124,12 @@ mkdir build32
 cd build32
 INSTALL_PATH=$ROOTPATH/opencv-x32
 cmake %OPENCV_OPTIONS% \
+  -DCMAKE_C_FLAGS=-m32
+  -DCMAKE_CXX_FLAGS=-m32
   -DOPENCV_LIB_ARCHIVE_INSTALL_PATH:PATH=$INSTALL_PATH \
   -DOPENCV_3P_LIB_INSTALL_PATH:PATH=$INSTALL_PATH \
   -DOPENCV_INCLUDE_INSTALL_PATH=$INSTALL_PATH \
-  .. -A Win32 -D CMAKE_BUILD_TYPE:STRING=Release
+  -DCMAKE_BUILD_TYPE:STRING=Release ..
 cmake --build . --config Release
 cmake --build . --target install --config Release
 cd $ROOTPATH
@@ -137,10 +139,12 @@ mkdir build64
 cd build64
 SET INSTALL_PATH=$ROOTPATH/opencv-x64
 cmake %OPENCV_OPTIONS% \
+  -DCMAKE_C_FLAGS=-m64
+  -DCMAKE_CXX_FLAGS=-m64
   -DOPENCV_LIB_ARCHIVE_INSTALL_PATH:PATH=$INSTALL_PATH \
   -DOPENCV_3P_LIB_INSTALL_PATH:PATH=$INSTALL_PATH \
   -DOPENCV_INCLUDE_INSTALL_PATH=$INSTALL_PATH \
-  .. -A x64 -D CMAKE_BUILD_TYPE:STRING=Release
+  -DCMAKE_BUILD_TYPE:STRING=Release ..
 cmake --build . --config Release
 cmake --build . --target install --config Release
 cd $ROOTPATH

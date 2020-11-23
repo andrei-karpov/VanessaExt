@@ -104,9 +104,10 @@ else(UNIX)
 			_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING)
 	target_compile_options(${TARGET} PRIVATE /utf-8)
 	target_link_libraries(${TARGET} opencv_core450.lib opencv_imgcodecs450.lib opencv_imgproc450.lib libpng.lib zlib.lib)
-	target_include_directories(${TARGET} PRIVATE "${CMAKE_SOURCE_DIR}/opencv-x${MySuffix2}")
-	target_link_directories(${TARGET} PRIVATE "${CMAKE_SOURCE_DIR}/opencv-x${MySuffix2}")
 endif(UNIX)
+
+target_include_directories(${TARGET} PRIVATE "${CMAKE_SOURCE_DIR}/opencv-x${MySuffix2}")
+target_link_directories(${TARGET} PRIVATE "${CMAKE_SOURCE_DIR}/opencv-x${MySuffix2}")
 
 set(Boost_USE_STATIC_LIBS ON) 
 set(Boost_USE_MULTITHREADED ON)  

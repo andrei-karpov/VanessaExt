@@ -1,4 +1,4 @@
-﻿#include "FindImage.h"
+﻿#include "ImageFinder.h"
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/imgproc.hpp"
 #include "json.hpp"
